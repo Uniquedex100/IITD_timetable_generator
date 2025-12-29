@@ -1,0 +1,362 @@
+.pre-dashboard {
+    width: 320px;
+    padding-top: 120px;
+    padding-bottom: 150px;
+    margin: auto;
+}
+
+.pre-dashboard .logout,
+.pre-dashboard .logout span {
+    font-family: 'Outfit', sans-serif;
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(71, 86, 87, 0.6);
+    margin-bottom: 0;
+}
+
+.pre-dashboard .logout span {
+    text-decoration: underline;
+    color: #6366f1;
+    /* Indigo */
+    cursor: pointer;
+}
+
+
+.fetching-courses {
+    background-color: white;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.fetching-courses h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #334155;
+}
+
+.loading-balls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loading-ball {
+    width: 20px;
+    height: 20px;
+    background-color: #a855f7;
+    /* Purple */
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.loading-ball:nth-child(1) {
+    animation: bounce 0.5s infinite alternate;
+}
+
+.loading-ball:nth-child(2) {
+    animation: bounce 0.5s 0.1s infinite alternate;
+}
+
+.loading-ball:nth-child(3) {
+    animation: bounce 0.5s 0.2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.course-list {
+    background-color: white;
+    /* Fallback */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.course-list h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.course-list p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-align: justify;
+    color: #64748b;
+}
+
+.course-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.course-list li {
+    background-color: rgba(241, 245, 249, 0.8);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.course-list button {
+    background-color: #6366f1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.course-list button:hover {
+    background-color: #4f46e5;
+}
+
+.dashboard {
+    padding: 3% 5%;
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+.dashboard h1 {
+    color: #475657;
+}
+
+.dashboard .logout,
+.dashboard .logout span {
+    font-family: 'Outfit', sans-serif;
+    margin-top: 5px;
+    color: rgba(71, 86, 87, 0.6);
+}
+
+.dashboard .logout span {
+    text-decoration: underline;
+    color: #6366f1;
+    cursor: pointer;
+}
+
+.timetable-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 30px;
+    height: auto;
+    min-height: 80vh;
+}
+
+.timetable-grid {
+    width: 100%;
+}
+
+
+.timetable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.timetable-header h2 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.add-course-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.input-course {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-course:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -1px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px -1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.remove-btn {
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    padding: 5px;
+    line-height: 1;
+}
+
+.remove-btn:hover {
+    color: #ef4444;
+    /* Keep red for danger action */
+}
+
+.timetable-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.timetable-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.timetable-edit-btn {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    background-color: #f1f5f9;
+    color: #64748b;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.timetable-edit-btn:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Edit Timing Sections */
+.edit-timing-section {
+    margin-bottom: 15px;
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.edit-timing-section h5 {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+.select-lab-time {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.select-lab-time-comp {
+    flex: 1;
+}
+
+.select-lab-time-comp p {
+    margin: 0 0 5px 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.select-lab-time-comp input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .timetable-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .timetable-grid {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .timetable-items {
+        width: 100%;
+    }
+}

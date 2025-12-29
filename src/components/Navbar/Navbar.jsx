@@ -1,0 +1,18 @@
+import React from 'react'
+import './Navbar.css'
+import { Link } from 'react-router-dom'
+
+export default function Navbar() {
+    return (
+        <nav>
+            <div className="navbar-logo">
+                <h1>
+                    <Link to="/" style={{ color: '#333', textDecoration: 'none' }}>
+                        Timetable<span style={{ color: '#6366f1' }}>Gen</span>
+                    </Link>
+                </h1>
+            </div>
+            {/* Removed DevClub branding */}
+        </nav>
+    )
+}

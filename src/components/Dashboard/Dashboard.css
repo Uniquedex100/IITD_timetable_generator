@@ -1,0 +1,229 @@
+.m-dashboard {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.live-course {
+    width: 45%;
+}
+
+.live-course-heading {
+    display: flex;
+    align-items: center;
+}
+
+.live-course-heading-dot {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: #EF5B5B;
+    border-radius: 15px;
+    margin-right: 10px;
+    animation: blink-live 2s infinite;
+}
+
+.live-course-heading-dot-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 23px;
+    width: 23px;
+    background-color: #EF5B5B;
+    border: 4px solid white;
+    border-radius: 15px;
+}
+
+@keyframes blink-live {
+    0% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.live-course-heading h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #475657;
+}
+
+.live-course-body {
+    position: relative;
+    margin-top: 20px;
+    background-color: rgba(220, 238, 209, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.live-course-body h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #475657;
+    margin-bottom: 5px;
+}
+
+.live-course-body p {
+    font-size: 18px;
+    color: #475657;
+}
+
+.live-course-body-room {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #9984D4;
+    color: white !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.live-course-footer {
+    margin-top: 20px;
+}
+
+.live-course-footer button {
+    background-color: transparent;
+    color: #EF5B5B;
+    padding: 10px 20px;
+    border: 1px solid #EF5B5B;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.live-course-footer button:hover {
+    background-color: #EF5B5B;
+    color: white;
+}
+
+.live-course-footer p {
+    font-size: 16px;
+    color: #475657;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.live-course-footer p a {
+    color: #EF5B5B;
+    text-decoration: none;
+}
+
+.live-course-footer span {
+    font-size: 16px;
+    color: #475657;
+}
+
+.live-course-footer span span {
+    color: #EF5B5B;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.new-container {
+    width: 45%;
+    height: max-content;
+}
+
+.live-free-lh {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #475657;
+    height: max-content;
+    margin-bottom: 20px;
+}
+
+.live-free-lh-heading {
+    font-size: 20px;
+    font-weight: 500;
+    color: #475657;
+    line-height: 150%;
+}
+
+.live-free-lh-rooms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.live-free-lh-room {
+    background-color: #9984D4;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.live-free-lh-room p {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+.live-free-lh-unavail {
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 150%;
+}
+
+.notifs {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.notifs li {
+    font-size: 16px;
+    color: #475657;
+    margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+    .live-free-lh-rooms {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .live-free-lh-rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .m-dashboard {
+        flex-direction: column;
+    }
+    .live-course, .new-container {
+        width: 100%;
+    }
+    .live-course {
+        margin-bottom: 20px;
+    }
+    .live-free-lh-rooms {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .live-free-lh-rooms {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .live-free-lh-rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
