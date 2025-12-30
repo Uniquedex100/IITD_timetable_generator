@@ -7,15 +7,36 @@ import EditTiming from '../components/FullTimetable/EditTiming';
 
 export default function Generator() {
     const [allCourses, setAllCourses] = useState([]);
-    const [selectedCourses, setSelectedCourses] = useState([]);
+    const [selectedCourses, setSelectedCourses] = useState(() => {
+        try {
+            const saved = localStorage.getItem('selectedCourses');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            console.error("Failed to load selectedCourses from localStorage", e);
+            return [];
+        }
+    });
     const [searchQuery, setSearchQuery] = useState("");
-    const [timetableData, setTimetableData] = useState({});
+    const [timetableData, setTimetableData] = useState(() => {
+        try {
+            const saved = localStorage.getItem('timetableData');
+            return saved ? JSON.parse(saved) : {};
+        } catch (e) {
+            console.error("Failed to load timetableData from localStorage", e);
+            return {};
+        }
+    });
     const [expandedCourse, setExpandedCourse] = useState(null);
     const timetableRef = useRef(null);
 
     useEffect(() => {
         setAllCourses(coursesData);
     }, []);
+
+    useEffect(() => {
+        localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+        localStorage.setItem('timetableData', JSON.stringify(timetableData));
+    }, [selectedCourses, timetableData]);
 
     // Helper to parse timing string from JSON
     const parseTimingStr = (timingStr) => {
