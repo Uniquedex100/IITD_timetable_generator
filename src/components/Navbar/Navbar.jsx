@@ -7,8 +7,8 @@ export default function Navbar() {
         <nav>
             <div className="navbar-logo">
                 <h1>
-                    <Link to="/" style={{ color: '#333', textDecoration: 'none' }}>
-                        Timetable<span style={{ color: '#6366f1' }}>Gen</span>
+                    <Link to="/" style={{ color: '#ff6363ff', textDecoration: 'none' }}>
+                        Class<span style={{ color: '#6366f1' }}>Grid</span>
                     </Link>
                 </h1>
             </div>

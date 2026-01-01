@@ -262,16 +262,19 @@ export default function Generator() {
                 <h1 className="hero-title" style={{
                     fontSize: '3rem',
                     fontWeight: '800',
-                    background: 'linear-gradient(to right, #6366f1, #a855f7, #ec4899)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
                     letterSpacing: '-1px',
                     marginBottom: '15px'
                 }}>
-                    IIT Delhi Timetable
+                    <span style={{ color: '#ff6363ff' }}>Class</span>
+                    <span style={{ color: '#6366f1' }}>Grid</span>
                 </h1>
+
                 <p style={{ color: '#64748b', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-                    Design your perfect semester. Search courses, manage conflicts, and export to calendar.
+                    An updated ClassGrid, to design your perfect semester. Search courses, manage conflicts, and export to calendar.
+                    You can search for other people as well ;)
+                    Use autofetch for best results!
+
+                    Adding better and newer features soon!
                 </p>
             </div>
 
