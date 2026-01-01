@@ -206,12 +206,33 @@ export default function Generator() {
     const handleDownloadImage = async () => {
         if (!timetableRef.current) return;
 
+        // Get the inner scrollable container
+        const scrollContainer = timetableRef.current.querySelector('.timetable-grid');
+        if (!scrollContainer) return;
+
+        const scrollWidth = scrollContainer.scrollWidth;
+        const scrollHeight = scrollContainer.scrollHeight;
+
         try {
             const canvas = await html2canvas(timetableRef.current, {
                 scale: 2, // Better resolution
                 backgroundColor: '#ffffff', // Ensure white background
                 logging: false,
-                useCORS: true
+                useCORS: true,
+                width: scrollWidth, // Capture full width
+                height: scrollHeight, // Capture full height
+                windowWidth: scrollWidth, // Ensure window context is large enough
+                windowHeight: scrollHeight,
+                onclone: (clonedDoc) => {
+                    const clonedContainer = clonedDoc.querySelector('.timetable-grid');
+                    if (clonedContainer) {
+                        clonedContainer.style.overflow = 'visible'; // Show all content
+                        clonedContainer.style.width = scrollWidth + 'px'; // Enforce full width
+                        clonedContainer.style.height = scrollHeight + 'px'; // Enforce full height
+                        clonedContainer.style.maxWidth = 'none';
+                        clonedContainer.style.maxHeight = 'none';
+                    }
+                }
             });
 
             const image = canvas.toDataURL("image/png");
@@ -234,11 +255,11 @@ export default function Generator() {
         : [];
 
     return (
-        <section style={{ paddingTop: '100px', paddingBottom: '60px', minHeight: '100vh', maxWidth: '1440px', margin: '0 auto', paddingLeft: '5%', paddingRight: '5%' }}>
+        <section className="main-container" style={{ paddingTop: '100px', paddingBottom: '60px', minHeight: '100vh', maxWidth: '1440px', margin: '0 auto', paddingLeft: '5%', paddingRight: '5%' }}>
 
             {/* Header / Hero */}
             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-                <h1 style={{
+                <h1 className="hero-title" style={{
                     fontSize: '3rem',
                     fontWeight: '800',
                     background: 'linear-gradient(to right, #6366f1, #a855f7, #ec4899)',
@@ -255,7 +276,7 @@ export default function Generator() {
             </div>
 
             {/* Search Bar */}
-            <div style={{ maxWidth: '700px', margin: '0 auto 60px auto', position: 'relative' }}>
+            <div className="search-wrapper" style={{ maxWidth: '700px', margin: '0 auto 60px auto', position: 'relative' }}>
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <div style={{
                         position: 'relative',
@@ -493,7 +514,7 @@ export default function Generator() {
                         </div>
 
                         {selectedCourses.length > 0 && (
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                            <div className="action-buttons-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                                 <button
                                     onClick={generateICS}
                                     style={{
@@ -647,6 +668,13 @@ export default function Generator() {
             <style>{`
                 @media (max-width: 900px) {
                     .responsive-grid { grid-template-columns: 1fr !important; }
+                    .main-container { padding-top: 80px !important; padding-left: 15px !important; padding-right: 15px !important; }
+                    .hero-title { fontSize: 2.2rem !important; }
+                    .search-wrapper { margin-bottom: 40px !important; }
+                }
+                @media (max-width: 600px) {
+                    .action-buttons-grid { grid-template-columns: 1fr !important; }
+                    .hero-title { fontSize: 2rem !important; }
                 }
             `}</style>
         </section>

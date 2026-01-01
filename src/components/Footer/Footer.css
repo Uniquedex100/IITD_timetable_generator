@@ -5,8 +5,8 @@
     background: transparent;
     margin-top: auto;
     /* Push to bottom if in flex container */
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    /* bottom: 0; */
 }
 
 .footer p {

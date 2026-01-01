@@ -28,6 +28,12 @@ nav {
     gap: 5px;
 }
 
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 15px;
+    }
+}
+
 @media (max-width: 420px) {
     .navbar-logo h1 {
         font-size: 1.25rem;
